@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/events"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ isEditMode ? 'Editar Evento' : 'Crear Evento' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="saveEvent()">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ isEditMode ? 'Editar Detalles del Evento' : 'Nuevo Evento' }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item lines="full">
+          <ion-label position="floating">Nombre del Evento</ion-label>
+          <ion-input [(ngModel)]="event.title" name="name"></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label position="floating">Fecha</ion-label>
+          <ion-datetime display-format="MM/DD/YYYY" [(ngModel)]="event.date" name="date"></ion-datetime>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label position="floating">Descripción</ion-label>
+          <ion-textarea [(ngModel)]="event.description" name="description"></ion-textarea>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button expand="block" type="submit" color="success" class="animate-button">
+      <ion-icon slot="start" [name]="isEditMode ? 'save-outline' : 'add-outline'"></ion-icon>
+      {{ isEditMode ? 'Actualizar' : 'Crear' }} Evento
+    </ion-button>
+  </form>
+</ion-content>

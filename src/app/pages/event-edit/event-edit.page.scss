@@ -1,0 +1,36 @@
+ion-toolbar {
+  --background: #3880ff;
+  --color: #fff;
+}
+
+ion-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+ion-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+ion-item {
+  --background: transparent;
+  --border-width: 0;
+  margin-bottom: 15px;
+}
+
+ion-label {
+  font-weight: bold;
+  color: #666;
+}
+
+.animate-button {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.animate-button:hover {
+  transform: scale(1.05);
+  background-color: #28a745;
+}

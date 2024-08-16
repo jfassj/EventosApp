@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Bienvenido, {{ userName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="welcome-container">
+    <h2>¡Es hora de gestionar tus eventos!</h2>
+    <ion-button expand="full" color="secondary" routerLink="/tabs/events" class="welcome-button">
+      Ver Mis Eventos
+    </ion-button>
+    <ion-button expand="full" color="tertiary" routerLink="/tabs/event-edit" class="welcome-button">
+      Crear Nuevo Evento
+    </ion-button>
+    <ion-button expand="full" color="warning" class="welcome-button" (click)="signOut()">Cerrar sesión</ion-button>
+  </div>
+</ion-content>

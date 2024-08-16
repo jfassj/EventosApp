@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/events"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ event.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="event" class="ion-padding">
+  <div class="full-content">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ event.title }}</ion-card-title>
+        <ion-card-subtitle>{{ event.date | date:'fullDate' }}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>Nombre</ion-label>
+          <ion-input [(ngModel)]="event.title" readonly></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>Fecha</ion-label>
+          <ion-datetime display-format="MM/DD/YYYY" [(ngModel)]="event.date" readonly></ion-datetime>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>Descripción</ion-label>
+          <ion-textarea [(ngModel)]="event.description" readonly></ion-textarea>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="ion-padding">
+      <ion-button expand="block" color="tertiary" (click)="editEvent()" class="animate-button">
+        <ion-icon slot="start" name="create-outline"></ion-icon>
+        Editar
+      </ion-button>
+      <ion-button expand="block" color="danger" (click)="deleteEvent()" class="animate-button">
+        <ion-icon slot="start" name="trash-outline"></ion-icon>
+        Eliminar
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

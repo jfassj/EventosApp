@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Editar Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding profile-edit-content">
+  <div class="profile-header">
+    <ion-avatar class="profile-avatar">
+      <img *ngIf="profileImage; else defaultAvatar" [src]="profileImage" />
+      <ng-template #defaultAvatar>
+        <img src="assets/default-avatar.png" alt="Default Avatar" />
+      </ng-template>
+    </ion-avatar>
+    <ion-button fill="outline" color="secondary" (click)="pickImage()">Cargar Foto</ion-button>
+  </div>
+
+  <form (ngSubmit)="updateProfile()" class="profile-form">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="name" name="name" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo Electrónico</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email" required disabled></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nueva Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="newPassword" name="newPassword"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" color="primary" class="update-button">
+      Actualizar Perfil
+    </ion-button>
+  </form>
+</ion-content>
+
+

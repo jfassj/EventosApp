@@ -1,0 +1,56 @@
+ion-toolbar {
+  --background: #3880ff;
+  --color: #fff;
+}
+
+.register-content {
+  --background: linear-gradient(135deg, #000, #151616);
+}
+
+h2 {
+  font-weight: bold;
+  color: #3880ff;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-form {
+  margin-top: 20px;
+}
+
+ion-item {
+  --border-radius: 10px;
+  --padding-start: 10px;
+  --background: #000;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ion-label {
+  color: #fff;
+}
+
+ion-input {
+  color: #fff;
+}
+
+ion-button {
+  --border-radius: 20px;
+  --background: #3880ff;
+  --color: black;
+}
+
+.register-button {
+  margin-top: 20px;
+}

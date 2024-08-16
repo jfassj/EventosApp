@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true" class="ion-padding register-content">
+  <div class="ion-text-center">
+    <h2>¡Únete a Nosotros!</h2>
+  </div>
+
+  <form (ngSubmit)="register()" class="register-form">
+    <ion-item>
+      <ion-label position="floating">Correo Electrónico</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" color="primary" class="register-button">
+      Registrarse
+    </ion-button>
+  </form>
+
+  <div class="ion-text-center">
+    <ion-button fill="clear" routerLink="/login">¿Ya tienes cuenta? Inicia Sesión</ion-button>
+  </div>
+</ion-content>
